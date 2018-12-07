@@ -1,0 +1,25 @@
+zuul:
+  retryable: true
+  routes:
+    customer-api:
+      path: /esb/customer/**
+      serviceId: customer-api
+  ignored-services: "*"
+ribbon:
+  eureka:
+    enabled: false
+customer-api:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: http://ident.me
+turbine:
+  app-config: customer-api
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        enabled: false
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 210000
