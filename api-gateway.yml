@@ -10,7 +10,7 @@ ribbon:
 shipstation-api:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: http://localhost:20080
+    listOfServers: http://localhost:20080/esb/shipstation
 turbine:
   app-config: shipstation-api
 hystrix:
