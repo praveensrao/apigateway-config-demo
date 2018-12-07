@@ -1,18 +1,19 @@
 zuul:
   retryable: true
   routes:
-    shipstation-api:
-      path: /esb/shipstation/**
-      serviceId: shipstation-api
+    shipstation-rates-api:
+      path: /esb/shipstation/rates
+      serviceId: shipstation-rates-api
+  ignored-services: "*"
 ribbon:
   eureka:
     enabled: false
-shipstation-api:
+shipstation-rates-api:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: http://localhost:20080/esb/shipstation
+    listOfServers: http://localhost:20080
 turbine:
-  app-config: shipstation-api
+  app-config: shipstation-rates-api
 hystrix:
   command:
     default:
