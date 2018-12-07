@@ -1,0 +1,28 @@
+zuul:
+  retryable: true
+  routes:
+    shipstation-api:
+      path: /esb/shipstation/**
+      serviceId: shipstation-api
+  ignored-services: "*"
+ribbon:
+  eureka:
+    enabled: false
+shipstation-api:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: http://ident.me
+turbine:
+  app-config: shipstation-api
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        enabled: false
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 210000
+management:
+  security:
+    enabled: false
