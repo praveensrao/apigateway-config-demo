@@ -2,8 +2,9 @@ zuul:
   retryable: true
   routes:
     shipstation-api:
-      path: /esb/shipstation/rates
+      path: /esb/**
       serviceId: shipstation-api
+  ignored-services: "*"
 ribbon:
   eureka:
     enabled: false
