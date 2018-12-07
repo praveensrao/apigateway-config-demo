@@ -2,7 +2,7 @@ zuul:
   retryable: true
   routes:
     customer-api:
-      path: /esb/customer/**
+      path: /esbnew/customer/**
       serviceId: customer-api
   ignored-services: "*"
 ribbon:
