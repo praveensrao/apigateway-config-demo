@@ -4,7 +4,6 @@ zuul:
     shipstation-api:
       path: /esb/shipstation/**
       serviceId: shipstation-api
-  ignored-services: "*"
 ribbon:
   eureka:
     enabled: false
