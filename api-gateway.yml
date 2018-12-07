@@ -2,7 +2,7 @@ zuul:
   retryable: true
   routes:
     shipstation-api:
-      path: /esb
+      path: /esb/shipstation/rates
       serviceId: shipstation-api
 ribbon:
   eureka:
@@ -10,7 +10,7 @@ ribbon:
 shipstation-api:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: http://localhost:20080/esb/shipstation/rates
+    listOfServers: http://localhost:20080
 turbine:
   app-config: shipstation-api
 hystrix:
