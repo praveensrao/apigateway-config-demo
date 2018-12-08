@@ -8,6 +8,8 @@ zuul:
 ribbon:
   eureka:
     enabled: false
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
 shipstation-rates-api:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
