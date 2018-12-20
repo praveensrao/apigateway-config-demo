@@ -4,6 +4,9 @@ zuul:
     shipstation-rates-api:
       path: /esb/shipstation/rates
       serviceId: shipstation-rates-api
+    shipstation-services-api:
+      path: /esb/shipstation/services
+      serviceId: shipstation-services-api
   ignored-services: "*"
 ribbon:
   eureka:
@@ -14,8 +17,12 @@ shipstation-rates-api:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
     listOfServers: http://localhost:20080
+shipstation-services-api:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: http://localhost:20080
 turbine:
-  app-config: shipstation-rates-api
+  app-config: shipstation-rates-api, shipstation-services-api
 hystrix:
   command:
     default:
