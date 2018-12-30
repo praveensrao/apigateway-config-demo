@@ -32,10 +32,6 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 210000
-      metrics:
-        rollingStats:
-          timeInMilliseconds: 86400000
-          numBuckets: 86400
 management:
   security:
     enabled: false
