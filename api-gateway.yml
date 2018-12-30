@@ -27,7 +27,7 @@ hystrix:
   command:
     default:
       circuitBreaker:
-        enabled: true
+        enabled: false
       execution:
         isolation:
           thread:
