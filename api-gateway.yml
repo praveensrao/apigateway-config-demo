@@ -28,7 +28,7 @@ hystrix:
     default:
       metrics:
         rollingStats:
-          timeInMilliseconds: 86400000
+          timeInMilliseconds: 3600000
           numBuckets: 1
       circuitBreaker:
         enabled: false
