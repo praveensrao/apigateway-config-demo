@@ -26,10 +26,6 @@ turbine:
 hystrix:
   command:
     default:
-      metrics:
-        rollingStats:
-          timeInMilliseconds: 60000
-          numBuckets: 60
       circuitBreaker:
         enabled: false
       execution:
