@@ -34,7 +34,7 @@ shipstation-rates-api-xml:
 weather-api:
   ribbon:
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: http://localhost:20080
+    listOfServers: http://localhost:20081
 turbine:
   app-config: shipstation-rates-api, shipstation-services-api, shipstation-rates-api-xml, weather-api
 hystrix:
